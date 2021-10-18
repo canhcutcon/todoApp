@@ -73,7 +73,6 @@ const deleteTask = (task, lstTasks) => {
     const index = lstTasks.findIndex((val) => val.description === task.description);
     if (index !== -1)
         lstTasks.splice(index, 1);
-
 }
 
 const addDoneTasks = (task, User) => {
@@ -312,6 +311,7 @@ $(document).ready(function() {
 
     //remove doing tasks
     $(document).on('click', '.delete-task', function() {
+        getDataTasks(User);
         const id = $(this).parent().data('id');
         const task = lstTask.find((val, index) => index === id);
         deleteDataTasks(task);
@@ -321,6 +321,7 @@ $(document).ready(function() {
 
     // remove done task
     $(document).on('click', '.delete-done', function() {
+        getDataDoneTasks(User);
         const id = $(this).parent().data('id');
         const task = lstDoneTasks.find((val, index) => index === id);
         deleteDataTasks(task);
