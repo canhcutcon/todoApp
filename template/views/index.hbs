@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encore App</title>
+    <link rel="icon" href="/img/logo2.jpg">
+    <link rel="stylesheet" href="/css/reset.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Besley:ital@1&display=swap" rel="stylesheet">
+</head>
+<body>
+    {{>header}}
+    <div class="main-content flex">
+        <div class="container">
+               <div class="flex"><img src="/img/canhcut.gif" alt=""></div>
+               <div class="content">
+                   <h1>Task Manager</h1>
+                   <h3>A Web App For Everybody!</h3>
+                   <h3 class="username">Canh cut con</h3>
+               </div>
+               <div class="flex"><button class="btnSignUp">Sign Up</button></div>
+               <div class="background-task flex">
+                   <div class="task todo-list">
+                       <div class="list-title">
+                           To Do
+                       </div>
+                       <div class="lst-content">
+                           <form action="">
+                               <div class="add-tasks flex">
+                                   <input type="text" class="txtToDo">
+                                   <button type="submit" class="btnAddTasks">+</button>
+                               </div>
+                               <div class="doing-tasks">
+                                   
+                               </div>
+                               <div class="done-tasks">
+                                  
+                               </div>
+                           </form>
+                       </div>
+                   </div>
+               </div>
+        </div>
+    </div>
+    {{>footer}}
+     <div class="modal-signup">
+        <div class="modal-content">
+            <div class="modal-header flex">
+                <h3>Sign Up</h3>
+                 <span class="close-modal">x</span>
+            </div>
+            <div class="modal-body">
+              <form action="/users" method="POST" id="formSignIn" enctype = "multipart/form-data">
+                   <div class="input-group">
+                    <label for="txtName">Name:</label>
+                    <input type="text" class="txtName" name="name" placeholder="Enter your name">
+                </div>
+                    <div class="input-group">
+                    <label for="txtmail">Email:</label>
+                    <input type="text" class="txtmail" name="email" placeholder="Enter your email">
+                </div>
+                 <div class="input-group">
+                    <label for="txtPassword">Password:</label>
+                    <input type="password" class="txtPassword" name="password" placeholder="Enter your password">
+                </div>
+                  <div class="input-group">
+                    <span class="error signinLG-error"></span>
+                   <button type="submit" id="btnSign-up">Sign Up</button>
+                    
+                </div>
+              </form>
+            </div>
+        </div>
+    </div>
+     <div class="modal-login">
+        <div class="modal-content">
+            <div class="modal-header flex">
+                <h3>Login</h3>
+                 <span class="close-modal">x</span>
+            </div>
+            <div class="modal-body">
+              <form action="/users/login" method="POST" id="formLogin">
+                    <div class="input-group">
+                    <label for="txtmail">Email:</label>
+                    <input type="text" name="email" class="txtmail-login" placeholder="Enter your email" value="lisa@gmail.com">
+                </div>
+                 <div class="input-group">
+                    <label for="txtPassword">Password:</label>
+                    <input type="password" class="txtPassword-login" name="password" placeholder="Enter your password" value="bosscave123">
+                </div>
+                  <div class="input-group">
+                    <span class="error login-error"></span>
+                   <button type="submit" id="btnlogin">Login</button>
+                   
+                </div>
+              </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsonwebtoken/8.5.1/index.js"></script>
+<script src="/js/jquery-3.6.0.min.min.js"></script>
+<script src="/js/main.js"></script>
+</html>
